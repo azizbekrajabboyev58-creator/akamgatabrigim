@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akajon, tug'ilgan kuning muborak</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Nunito:wght@400;600;800&display=swap">
+<style>
+:root{
+  --night:#0d1a2b; --forest:#12362b; --amber:#f4b869; --rose:#eaa89b; --ink:#f6efe4; --mute:#c9c1b4;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif; --sans:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:#0d1a2b}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--night) 6%,rgba(13,26,43,.78) 38%,rgba(13,26,43,0) 68%),linear-gradient(to bottom,rgba(244,184,105,.18),rgba(0,0,0,0) 30%)}
+.hero-text{position:relative;z-index:2;width:100%;max-width:640px;padding:0 24px 56px;text-align:center}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(40px,10vw,68px);line-height:1.08;margin:0 0 14px;letter-spacing:-.01em;text-shadow:0 2px 24px rgba(0,0,0,.45)}
+.sub{margin:0 auto;max-width:30em;color:var(--ink);opacity:.92}
+.count{display:inline-block;margin-top:22px;padding:10px 20px;border:1px solid rgba(244,184,105,.55);border-radius:999px;color:var(--amber);font-weight:800;font-size:16px;background:rgba(13,26,43,.55)}
+main{max-width:640px;margin:0 auto;padding:0 24px}
+section{padding:72px 0 8px}
+h2{font-family:var(--serif);font-weight:500;font-style:italic;font-size:clamp(28px,6vw,38px);line-height:1.2;margin:0 0 28px;color:var(--amber)}
+.letter p{font-family:var(--serif);font-size:clamp(19px,4.6vw,22px);line-height:1.8;margin:0 0 1.2em;font-weight:400}
+.sign{text-align:right;font-family:var(--serif);font-style:italic;color:var(--rose);font-size:22px}
+.poem{border-left:3px solid var(--amber);padding:4px 0 4px 22px}
+.poem .st{margin:0 0 30px}
+.poem .ln{display:block;font-family:var(--serif);font-style:italic;font-size:clamp(19px,4.6vw,23px);line-height:1.65;opacity:.12;transform:translateY(8px);transition:opacity .9s ease,transform .9s ease}
+.poem .ln.on{opacity:1;transform:none}
+.wishes{list-style:none;margin:0;padding:0}
+.wishes li{padding:16px 0;border-bottom:1px solid rgba(246,239,228,.14)}
+.wishes li:last-child{border:0}
+.wishes b{font-family:var(--serif);font-size:1.12em;color:var(--ink)}
+.wishes span{display:block;color:var(--mute);font-size:16px}
+.gift{padding:90px 0 110px;text-align:center}
+.gift h2{color:var(--ink);font-style:normal;font-weight:700}
+.gift p.lead{color:var(--mute);margin:0 auto 32px;max-width:26em}
+.btns{display:flex;flex-direction:column;gap:14px}
+button{font:inherit;font-weight:800;font-size:17px;line-height:1.3;border:0;border-radius:16px;padding:18px 22px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;color:var(--night)}
+button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+button:active{transform:scale(.97)}
+.b1{background:var(--amber);box-shadow:0 8px 28px rgba(244,184,105,.28)}
+.b2{background:transparent;color:var(--ink);border:1.5px solid rgba(246,239,228,.4)}
+.b1.nudge{animation:nudge .6s ease 2}
+@keyframes nudge{0%,100%{transform:none}25%{transform:translateX(-7px) scale(1.03)}75%{transform:translateX(7px) scale(1.03)}}
+.out{margin-top:34px;min-height:10px}
+.sticker{display:inline-block;background:#fff;border-radius:34px;padding:14px 26px;box-shadow:0 0 0 6px #fff,0 18px 40px rgba(0,0,0,.45);transform:rotate(-5deg);animation:pop .6s cubic-bezier(.2,1.6,.4,1) both}
+.sticker .face{display:block;font-size:104px;line-height:1.1;animation:wob 1.1s ease-in-out infinite}
+.sticker .coins{display:block;font-size:30px;letter-spacing:6px;margin-top:-4px}
+@keyframes pop{from{transform:scale(.2) rotate(-25deg);opacity:0}to{transform:rotate(-5deg);opacity:1}}
+@keyframes wob{0%,100%{transform:rotate(-6deg) scale(1)}50%{transform:rotate(7deg) scale(1.08)}}
+.msg{font-family:var(--serif);font-size:clamp(21px,5vw,26px);line-height:1.5;margin:30px auto 0;max-width:20em;animation:fade .8s ease .25s both}
+.msg.soft{color:var(--rose)}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.beg{font-size:64px;display:block;animation:wob 1.4s ease-in-out infinite}
+footer{text-align:center;color:var(--mute);font-size:14px;padding:0 24px 40px}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .poem .ln{opacity:1;transform:none}
+}
+
+.mus{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;padding:10px 16px;border-radius:999px;font-size:15px;background:rgba(13,26,43,.78);color:var(--ink);border:1px solid rgba(244,184,105,.55);backdrop-filter:blur(6px)}
+.mus.off{opacity:.7}
+.cover{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(24px + env(safe-area-inset-top,0px)) 28px calc(24px + env(safe-area-inset-bottom,0px));background:radial-gradient(ellipse at 50% 100%,rgba(244,184,105,.38),rgba(13,26,43,0) 60%),linear-gradient(to bottom,#0d1a2b,#12362b);transition:opacity .9s ease}
+.cover.gone{opacity:0;pointer-events:none}
+.cover h2{font-family:var(--serif);font-style:normal;font-weight:700;font-size:clamp(36px,9vw,58px);color:var(--ink);margin:0 0 12px}
+.cover p{margin:0 0 34px;color:var(--mute);max-width:22em}
+.cover .gift-ico{font-size:64px;line-height:1;margin-bottom:18px}
+.cover button{min-width:200px}
+</style>
+</head>
+<body>
+
+<div class="cover" id="cover">
+  <div class="gift-ico">🎁</div>
+  <h2>Akajon, bu sahifa senga</h2>
+  <p>Ukangdan sening tug'ilgan kuning uchun. Ovozni yoqib qo'y.</p>
+  <button class="b1" id="open" type="button">Ochish</button>
+</div>
+
+<header class="hero">
+  <img alt="Akam va men, quyosh botayotgan paytda" src="photo.jpg">
+  <div class="hero-text">
+    <h1>Akajon, tug'ilgan kuning muborak</h1>
+    <p class="sub">21-dekabr. O'n to'qqiz yosh. Bu sahifa faqat sen uchun, ukangdan.</p>
+    <span class="count" id="count"></span>
+  </div>
+</header>
+
+<main>
+  <section class="letter">
+    <h2>Senga bir og'iz gap</h2>
+    <p>Akajon, bilasanmi, men senga buni hech qachon to'g'ri aytolmadim. Gaplashganda hazillashamiz, ba'zan tortishamiz ham, lekin yuragimning tubida har doim bir narsani bilaman: orqamda sen turibsan.</p>
+    <p>Ba'zan o'ylayman: agar sen bo'lmaganingda, men qanday inson bo'lardim? Bilmayman. Faqat shuni bilamanki, menda bor yaxshi narsalarning ko'pi sendan o'tgan. Sabr qilishni, to'g'ri gapirishni, og'ir kunda ham yelkani tik tutishni men senga qarab o'rgandim, o'zing buni sezmagan bo'lsang ham.</p>
+    <p>Qachon qoqilsam, birinchi sen yonimda bo'lding. Qachon qo'rqsam, sening "hech narsa bo'lmaydi" degan bir og'iz gaping menga yetdi. Sen menga ba'zan do'st bo'lding, ba'zan ustoz, ba'zan esa ota kabi suyanchiq.</p>
+    <p>Biz yigitlar bir-birimizga "rahmat" deyishni tez-tez uddalay olmaymiz. Yonma-yon yursak ham, ko'p gaplarni aytmay ketamiz. Lekin aytilmagan har bir gap yuragimda turibdi: har safar yordam bergan kuning, har safar jim turib yonimda bo'lgan lahzang uchun rahmat, akajon.</p>
+    <p>Bugun sen o'n to'qqizga kirasan. Dunyo uchun katta yigit bo'lib qolgandirsan, lekin men uchun hamon o'sha akamsan: yo'lga chiqsam, qo'limdan ushlab yetaklagan akam.</p>
+    <p>Sendan bir narsani so'rayman: agar ba'zan jahlim chiqib, ba'zan hazil bilan ko'nglingni og'ritgan bo'lsam, kechir. Men senga hech qachon yomon niyat qilmaganman. Hamma gapimning tagida faqat bitta narsa bor: sening mening akam ekaningdan faxrlanaman.</p>
+    <p>O'n to'qqiz yosh bu hali boshlanishi. Oldingda katta yo'l, katta orzular, yangi odamlar, yangi g'alabalar bor. Men esa har doim yoningda yoki bir qadam orqangda bo'laman. Qachon kerak bo'lsam, bir og'iz ayt, bas.</p>
+    <p>Seni juda yaxshi ko'raman, akajon. Buni sening tug'ilgan kuningda, bir marta ovoz chiqarib aytay dedim. Tug'ilgan kuning muborak bo'lsin. Yoshing ulug', umring uzoq, nasibang keng bo'lsin.</p>
+    <div class="sign">Sening ukang</div>
+  </section>
+
+  <section>
+    <h2>Akam uchun she'r</h2>
+    <div class="poem">
+      <div class="st">
+        <span class="ln">Qo'lingdan ushlab o'sdim men,</span>
+        <span class="ln">Orqangda turib jasur bo'ldim.</span>
+        <span class="ln">Dunyoga qarshi chiqsam ham,</span>
+        <span class="ln">Sen borsan, men yolg'iz emasman.</span>
+      </div>
+      <div class="st">
+        <span class="ln">Yiqilsam, birinchi sen turg'azding,</span>
+        <span class="ln">Yig'lasam, indamay yonimda o'tirding.</span>
+        <span class="ln">"Seni yaxshi ko'raman" deb aytmading hech,</span>
+        <span class="ln">Lekin har qadamda ko'rsatding.</span>
+      </div>
+      <div class="st">
+        <span class="ln">Bugun tug'ilgan kuning, akajon,</span>
+        <span class="ln">Ko'zlaring hech qachon yoshga to'lmasin.</span>
+        <span class="ln">Uyingga baraka, dilingga orom,</span>
+        <span class="ln">Yo'lingga hamisha omad bo'lsin.</span>
+      </div>
+      <div class="st">
+        <span class="ln">Yillar o'tar, soch oqarar,</span>
+        <span class="ln">Ikkimiz ham keksayib qolarmiz.</span>
+        <span class="ln">Faqat sen mening akam bo'lib qol,</span>
+        <span class="ln">Men esa ukang bo'lib o'tib ketay.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mening tilaklarim</h2>
+    <ul class="wishes">
+      <li><b>Sog'lik bo'lsin.</b><span>Hamma narsadan oldin shu. Sog' bo'lsang, qolganini birga qilamiz.</span></li>
+      <li><b>Orzularing ushalsin.</b><span>Ichingda yurgan, hech kimga aytmagan orzularing ham.</span></li>
+      <li><b>Atrofingda yaxshi odamlar bo'lsin.</b><span>Seni sen bo'lganing uchun yaxshi ko'radigan odamlar.</span></li>
+      <li><b>Hech qachon yolg'iz qolma.</b><span>Qayerda bo'lsang ham, men bir qo'ng'iroq narida ekanimni bil.</span></li>
+      <li><b>Rizqing butun, qo'ling ochiq bo'lsin.</b><span>Mehnating zoye ketmasin. Cho'ntaging hech qachon bo'sh qolmasin, dasturxoning esa doim to'la bo'lsin.</span></li>
+      <li><b>Tanlagan yo'lingda g'olib bo'l.</b><span>O'qishdami, ishdami, qaysi yo'lni tanlasang ham, o'sha yo'lda eng yaxshilardan bo'l. Eshiklar sening oldingda o'zi ochilsin.</span></li>
+      <li><b>Yuraging toza qolsin.</b><span>Dunyo qanchalik o'zgarmasin, sen shu o'zing bo'lib qol: mard, mehribon va halol.</span></li>
+      <li><b>Seni tushunadigan inson yo'lingga chiqsin.</b><span>Vaqti kelganda, kulgusi seni quvontiradigan, qiyin kunda yelkangni tutib turadigan inson nasibang bo'lsin.</span></li>
+      <li><b>Kulgi ko'p bo'lsin.</b><span>Ko'zingdan faqat quvonch yoshi oqsin. Sen kulib turgan har bir kun bizning uyimiz uchun bayram.</span></li>
+      <li><b>Xudo seni har yomonlikdan o'zi asrasin.</b><span>Yo'lingda ham, uyingda ham, ko'zga ko'rinmas xatarlardan ham. Omin.</span></li>
+    </ul>
+  </section>
+
+  <section class="gift">
+    <h2>Va endi sovg'a masalasi</h2>
+    <p class="lead">Ukangdan bitta tanlov. Yaxshilab o'ylab tanla.</p>
+    <div class="btns">
+      <button class="b1" id="yes">Ukangizdan sirli sovg'a</button>
+      <button class="b2" id="no">Ukam o'zi sog' bo'lsa bo'ldi, sovg'a kerak emas</button>
+    </div>
+    <div class="out" id="out" aria-live="polite"></div>
+  </section>
+</main>
+<footer>Akam uchun, ukasidan, muhabbat bilan</footer>
+
+<button class="mus" id="mus" type="button" aria-label="Musiqani yoqish yoki o'chirish">🎵 Musiqa</button>
+<audio id="bgm" loop preload="auto"><source src="music.mp3" type="audio/mpeg"><source src="music.m4a" type="audio/mp4"></audio>
+<script>
+(function(){
+  // Hisoblagich
+  var el=document.getElementById('count');
+  var now=new Date(), y=now.getFullYear();
+  var t=new Date(y,11,21);
+  var today=new Date(y,now.getMonth(),now.getDate());
+  if(today>t){t=new Date(y+1,11,21)}
+  var d=Math.round((t-today)/86400000);
+  el.textContent = "Bugun sening tug'ilgan kuning, akajon!";
+
+  // She'r satrlari birin-ketin ochiladi
+  var lines=[].slice.call(document.querySelectorAll('.ln'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+    },{threshold:.6});
+    lines.forEach(function(l,i){ l.style.transitionDelay=((i%4)*120)+'ms'; io.observe(l); });
+  } else { lines.forEach(function(l){l.classList.add('on')}); }
+
+  // Tugmalar
+  var out=document.getElementById('out'), yes=document.getElementById('yes'), no=document.getElementById('no');
+  yes.addEventListener('click',function(){
+    out.innerHTML='<div class="sticker"><span class="face">🤣</span><span class="coins">💸💳💸</span></div>'+
+      '<p class="msg">Ukangiz tomonidan sovg\'ani olish uchun, iltimos, onangizning kartasiga pul tashlang! 😄</p>';
+    out.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  no.addEventListener('click',function(){
+    out.innerHTML='<span class="beg">🥺</span><p class="msg soft">Iltimos, sirli sovg\'a tugmasini bosing!</p>';
+    yes.classList.remove('nudge'); void yes.offsetWidth; yes.classList.add('nudge');
+  });
+  // Fon musiqasi (past ovozda)
+  var bgm=document.getElementById('bgm'), mus=document.getElementById('mus'), wantOff=false;
+  bgm.volume=0.14;
+  bgm.addEventListener('error',function(){ mus.textContent='⚠️ Musiqa fayli topilmadi'; },true);
+  function setUI(){ mus.textContent = bgm.paused ? '🔇 Musiqa' : '🎵 Musiqa'; mus.classList.toggle('off',bgm.paused); }
+  function start(){ if(wantOff||!bgm.paused) return; var p=bgm.play(); if(p&&p.then){p.then(setUI).catch(function(){});} }
+  ['pointerdown','touchend','keydown','click'].forEach(function(ev){
+    document.addEventListener(ev,function(e){ if(e.target===mus||mus.contains(e.target)) return; start(); },{once:false,passive:true});
+  });
+  mus.addEventListener('click',function(){
+    if(bgm.paused){ wantOff=false; bgm.play().then(setUI).catch(setUI); } else { wantOff=true; bgm.pause(); setUI(); }
+  });
+  bgm.addEventListener('play',setUI); bgm.addEventListener('pause',setUI);
+  start(); setUI();
+
+  // Kirish ekrani: bosilganda musiqa boshlanadi
+  var cover=document.getElementById('cover');
+  document.getElementById('open').addEventListener('click',function(){
+    wantOff=false;
+    var p=bgm.play(); if(p&&p.then){p.then(setUI).catch(setUI);}
+    cover.classList.add('gone');
+    setTimeout(function(){cover.style.display='none';},950);
+  });
+})();
+</script>
+</body>
+</html>
